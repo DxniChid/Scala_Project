@@ -1,5 +1,7 @@
 package model
 
+import scala.util.Random
+
 object Deck:
 
   val standard: Vector[Card] =
@@ -10,3 +12,6 @@ object Deck:
 
   def size: Int =
     standard.size
+
+  def shuffled: Vector[Card] =
+    Random.shuffle(standard)

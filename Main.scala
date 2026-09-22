@@ -10,6 +10,6 @@ def main(): Unit =
 
   println(s"Deck size: ${Deck.size}")
   println()
-  println("First 5 cards:")
+  println("Shuffled Deck: First 5 cards:")
 
-  Deck.standard.take(5).foreach(card => println(card))
+  Deck.shuffled.take(5).foreach(card => println(card))
