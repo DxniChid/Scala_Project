@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E040] Syntax Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:9:6 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m9 |[0m      [33myield[0m Card(rank, suit)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m      ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m      unindent expected, but 'yield' found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
