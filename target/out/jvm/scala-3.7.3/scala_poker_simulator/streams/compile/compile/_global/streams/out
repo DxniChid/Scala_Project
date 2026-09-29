@@ -1,20 +1,21 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\Main.scala:9:17 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m9 |[0m    Combinations.choose(cards, [31m3[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m    ^^^^^^^^^^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m  |[0m    value choose is not a member of object poker.Combinations[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E045] Cyclic Error: C:\Users\chidi\Desktop\Scala_Project\poker\Combinations.scala:20:12 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m            withHead ++ withoutHead[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m            ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m            Recursive [33mvalue[0m [35mwithHead[0m needs type[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m             Run with -explain-cyclic for more details.[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\chidi\Desktop\Scala_Project\Main.scala:26:25 ----------------[0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m26 |[0m      currentPlayerIndex = [31m0[0m,[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m      ^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[33mmethod[0m [35mapply[0m in [33mobject[0m [35mGameState[0m: (players: Vector[model.Player], deck: Vector[model.Card],[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  communityCards: Vector[model.Card], pot: Int, currentPlayer: Int, street:[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  model.Street): model.GameState does not have a parameter currentPlayerIndex[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\model\GameState.scala:20:12 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m    players(currentPlayerIndex)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m            ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m            Not found: currentPlayerIndex[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\chidi\Desktop\Scala_Project\poker\Combinations.scala:20:35 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m            withHead ++ withoutHead[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                   ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                   Found:    Unit[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                   Required: List[List[A]][0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E120] Naming Error: C:\Users\chidi\Desktop\Scala_Project\model\GameState.scala:19:6 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m19 |[0m  [33mdef[0m [36mcurrentPlayer[0m: [35mPlayer[0m =[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m      ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m      Conflicting definitions:[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m      val currentPlayer: Int in [33mclass[0m [35mGameState[0m at line 15 and[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m      def currentPlayer: model.Player in [33mclass[0m [35mGameState[0m at line 19[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
 [0m[[0m[31merror[0m] [0m[0mthree errors found[0m
