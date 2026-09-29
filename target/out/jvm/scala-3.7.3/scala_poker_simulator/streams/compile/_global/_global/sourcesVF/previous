@@ -1,1 +1,1 @@
-["Task[Seq[interface xsbti.HashedVirtualFileRef]]",["${BASE}/Main.scala","${BASE}/model/Card.scala","${BASE}/model/Deck.scala"]]
+["Task[Seq[interface xsbti.HashedVirtualFileRef]]",["${BASE}/Main.scala","${BASE}/model/Action.scala","${BASE}/model/Card.scala","${BASE}/model/Deck.scala","${BASE}/model/GameState.scala","${BASE}/model/Player.scala","${BASE}/poker/Combinations.scala"]]

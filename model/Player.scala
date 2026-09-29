@@ -1,35 +1,20 @@
-object Rank:
+package model
 
-  extension (rank: Rank)
+case class Player(
+    id: Int,
+    name: String,
+    chips: Int,
+    hand: Vector[Card] = Vector.empty,
+    folded: Boolean = false
+):
+  def receiveCards(cards: Vector[Card]): Player =
+    copy(hand = cards)
 
-    def symbol: String =
-      rank match
-        case Rank.Two   => "2"
-        case Rank.Three => "3"
-        case Rank.Four  => "4"
-        case Rank.Five  => "5"
-        case Rank.Six   => "6"
-        case Rank.Seven => "7"
-        case Rank.Eight => "8"
-        case Rank.Nine  => "9"
-        case Rank.Ten   => "10"
-        case Rank.Jack  => "J"
-        case Rank.Queen => "Q"
-        case Rank.King  => "K"
-        case Rank.Ace   => "A"
+  def bet(amount: Int): Player =
+    require(amount >= 0, "Bet amount cannot be negative")
+    require(amount <= chips, "Player cannot bet more chips than they have")
 
-    def value: Int =
-      rank match
-        case Rank.Two   => 2
-        case Rank.Three => 3
-        case Rank.Four  => 4
-        case Rank.Five  => 5
-        case Rank.Six   => 6
-        case Rank.Seven => 7
-        case Rank.Eight => 8
-        case Rank.Nine  => 9
-        case Rank.Ten   => 10
-        case Rank.Jack  => 11
-        case Rank.Queen => 12
-        case Rank.King  => 13
-        case Rank.Ace   => 14
+    copy(chips = chips - amount)
+
+  def fold: Player =
+    copy(folded = true)

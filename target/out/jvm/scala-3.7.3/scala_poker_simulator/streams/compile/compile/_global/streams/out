@@ -1,58 +1,20 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:15:14 ----------[0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m15 |[0m    stpackage model[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m              ^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m              end of statement expected but identifier found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:31:28 ----------[0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m31 |[0m    Random.shuffle(standard)standard.size[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                            ^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                          end of statement expected but identifier found[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E161] Naming Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:19:0 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m19 |[0m[33mobject[0m [35mDeck[0m:[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0mDeck is already defined as [33mobject[0m [35mDeck[0m in C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\Main.scala:11:30 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m11 |[0m  println([31ms"Deck size: [0m${Deck.size}[31m"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                         ^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                         value size is not a member of object model.Deck[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\Main.scala:15:7 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m15 |[0m  Deck.shuffled.take([31m5[0m).foreach([36mcard[0m => println(card))[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m  ^^^^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  value shuffled is not a member of object model.Deck[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:15:4 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m15 |[0m    stpackage model[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: stpackage - did you mean package?[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: C:\Users\chidi\Desktop\Scala_Project\Main.scala:9:17 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m9 |[0m    Combinations.choose(cards, [31m3[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m    ^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m    value choose is not a member of object poker.Combinations[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E045] Cyclic Error: C:\Users\chidi\Desktop\Scala_Project\poker\Combinations.scala:20:12 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m            withHead ++ withoutHead[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m            ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m            Recursive [33mvalue[0m [35mwithHead[0m needs type[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m             Run with -explain-cyclic for more details.[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E049] Reference Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:28:4 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m28 |[0m    standard.size[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Reference to standard is ambiguous.[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    It is both defined in [33mobject[0m [35mDeck$2[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    and inherited subsequently in [33mobject[0m [35mDeck$2[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\chidi\Desktop\Scala_Project\poker\Combinations.scala:20:35 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m            withHead ++ withoutHead[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                   ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                   Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                   Required: List[List[A]][0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E049] Reference Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:31:19 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m31 |[0m    Random.shuffle(standard)standard.size[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                   ^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                   Reference to standard is ambiguous.[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                   It is both defined in [33mobject[0m [35mDeck$2[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                   and inherited subsequently in [33mobject[0m [35mDeck$2[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E049] Reference Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:33:48 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m    [33mdef[0m [36mshuffled[0m: [35mVector[0m[[35mCard[0m] = Random.shuffle(standard)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                ^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                             Reference to standard is ambiguous.[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                             It is both defined in [33mobject[0m [35mDeck$2[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                             and inherited subsequently in [33mobject[0m [35mDeck$2[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\chidi\Desktop\Scala_Project\model\Deck.scala:33:57 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m    [33mdef[0m [36mshuffled[0m: [35mVector[0m[[35mCard[0m] = Random.shuffle(standard)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                         ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                            Found:    Unit[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                            Required: Vector[model.Card][0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0m10 errors found[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
