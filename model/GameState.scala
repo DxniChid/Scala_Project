@@ -1,43 +1,33 @@
 package model
 
-enum GamePhase:
+enum Street:
   case PreFlop
   case Flop
   case Turn
   case River
   case Showdown
-  case Finished
 
 case class GameState(
     players: Vector[Player],
     deck: Vector[Card],
     communityCards: Vector[Card],
     pot: Int,
-    currentPlayer: Int,
-    phase: GamePhase
+    currentPlayerIndex: Int,
+    street: Street
 ):
+  def currentPlayer: Player =
+    players(currentPlayerIndex)
 
-  def currentPlayerData: Player =
-    players(currentPlayer)
+  def activePlayers: Vector[Player] =
+    players.filterNot(_.folded)
 
   def updatePlayer(updatedPlayer: Player): GameState =
     copy(
-      players = players.updated(currentPlayer, updatedPlayer)
-    )
-
-  def addToPot(amount: Int): GameState =
-    copy(
-      pot = pot + amount
-    )
-
-  def addCommunityCard(card: Card): GameState =
-    copy(
-      deck = deck.tail,
-      communityCards = communityCards :+ card
-    )
-
-  def nextPlayer: GameState =
-    copy(
-      currentPlayer =
-        (currentPlayer + 1) % players.size
+      players =
+        players.map { player =>
+          if player.id == updatedPlayer.id then
+            updatedPlayer
+          else
+            player
+        }
     )
