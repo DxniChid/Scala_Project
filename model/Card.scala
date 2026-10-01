@@ -52,7 +52,7 @@ object Suit:
   extension (suit: Suit)
     def symbol: String =
       suit match
-        case Suit.Clubs    => "♣"
-        case Suit.Diamonds => "♦"
-        case Suit.Hearts   => "♥"
-        case Suit.Spades   => "♠"
+        case Suit.Clubs    => "C"
+        case Suit.Diamonds => "D"
+        case Suit.Hearts   => "H"
+        case Suit.Spades   => "S"
