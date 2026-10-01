@@ -13,7 +13,9 @@ case class GameState(
     communityCards: Vector[Card],
     pot: Int,
     currentPlayerIndex: Int,
-    street: Street
+    street: Street,
+    currentBet: Int = 0,
+    playerBets: Map[Int, Int] = Map.empty
 ):
   def currentPlayer: Player =
     players(currentPlayerIndex)
@@ -31,3 +33,4 @@ case class GameState(
             player
         }
     )
+  def playerBet(playerId: Int): Int = playerBets.getOrElse(playerId, 0)
