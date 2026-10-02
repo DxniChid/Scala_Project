@@ -20,7 +20,11 @@ object HandEvaluator:
       sortedCards.map(card => rankValue(card.rank))
 
     val grouped =
-      values.groupBy(identity).view.mapValues(_.size).toMap
+      values
+        .groupBy(identity)
+        .view
+        .mapValues(_.size)
+        .toMap
 
     val counts =
       grouped.values.toList.sorted.reverse
@@ -152,6 +156,28 @@ object HandEvaluator:
         sortedCards
       )
 
+  def bestHand(cards: List[Card]): EvaluatedHand =
+
+    require(
+      cards.size >= 5,
+      "At least 5 cards are required"
+    )
+
+    val combinations =
+      Combinations.choose(cards, 5)
+
+    combinations
+      .map(evaluate)
+      .sortBy { hand =>
+        val valueString =
+          hand.values
+            .map(value => f"$value%02d")
+            .mkString
+
+        (hand.rank.strength, valueString)
+      }
+      .last
+
   private def rankValue(rank: Rank): Int =
     rank match
       case Rank.Two   => 2
@@ -169,7 +195,8 @@ object HandEvaluator:
       case Rank.Ace   => 14
 
   private def isStraight(values: List[Int]): Boolean =
-    val uniqueValues = values.distinct.sorted
+    val uniqueValues =
+      values.distinct.sorted
 
     val normalStraight =
       uniqueValues.size == 5 &&
@@ -181,7 +208,8 @@ object HandEvaluator:
     normalStraight || aceLowStraight
 
   private def straightHighCard(values: List[Int]): Int =
-    val uniqueValues = values.distinct.sorted
+    val uniqueValues =
+      values.distinct.sorted
 
     if uniqueValues == List(2, 3, 4, 5, 14) then
       5
