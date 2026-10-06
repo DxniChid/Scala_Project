@@ -111,7 +111,7 @@ object ConsoleUI:
       if chips <= 0 then
 
         println(
-          "Uh-Oh! You don't have anymore chips, you lost!"
+          "Uh-Oh! You dont have anymore Chips, you lost!"
         )
 
         playAgain = false
@@ -124,7 +124,7 @@ object ConsoleUI:
 
         println()
         println(
-          "YOU WON! The other players have no chips."
+          "YOU WON! The other players have no Chips."
         )
 
         playAgain = false
@@ -150,20 +150,20 @@ object ConsoleUI:
   ): GameState =
 
     var currentState = state
-    var actions = 0
+    var actedPlayers = Set.empty[Int]
 
-    while
-      currentState.activePlayers.size > 1 &&
-      currentState.activePlayers.exists(
-        player => player.chips > 0
-      ) &&
-      actions < currentState.players.size * 4
-    do
+    while !bettingRoundFinished(
+        currentState,
+        actedPlayers
+      ) do
 
       val player =
         currentState.currentPlayer
 
       if player.folded || player.chips == 0 then
+
+        actedPlayers =
+          actedPlayers + player.id
 
         currentState =
           nextPlayer(currentState)
@@ -185,6 +185,9 @@ object ConsoleUI:
         val choice =
           readInt("Your action: ", 1, 5)
 
+        val oldBet =
+          currentState.currentBet
+
         choice match
 
           case 1 =>
@@ -197,6 +200,9 @@ object ConsoleUI:
                   currentState,
                   Action.Check
                 )
+
+              actedPlayers =
+                actedPlayers + player.id
 
             else
 
@@ -211,6 +217,9 @@ object ConsoleUI:
                 currentState,
                 Action.Call
               )
+
+            actedPlayers =
+              actedPlayers + player.id
 
           case 3 =>
 
@@ -231,6 +240,13 @@ object ConsoleUI:
                     Action.Raise(amount)
                   )
 
+                if currentState.currentBet > oldBet then
+                  actedPlayers =
+                    Set(player.id)
+                else
+                  actedPlayers =
+                    actedPlayers + player.id
+
               catch
                 case error: IllegalArgumentException =>
                   println(error.getMessage)
@@ -249,6 +265,9 @@ object ConsoleUI:
                 Action.Fold
               )
 
+            actedPlayers =
+              actedPlayers + player.id
+
           case 5 =>
 
             currentState =
@@ -261,9 +280,17 @@ object ConsoleUI:
               "You are ALL-IN!"
             )
 
-        actions += 1
+            if currentState.currentBet > oldBet then
+              actedPlayers =
+                Set(player.id)
+            else
+              actedPlayers =
+                actedPlayers + player.id
 
       else
+
+        val oldBet =
+          currentState.currentBet
 
         val action =
           randomAction(
@@ -283,7 +310,15 @@ object ConsoleUI:
               action
             )
 
+          if currentState.currentBet > oldBet then
+            actedPlayers =
+              Set(player.id)
+          else
+            actedPlayers =
+              actedPlayers + player.id
+
         catch
+
           case _: IllegalArgumentException =>
 
             currentState =
@@ -292,9 +327,33 @@ object ConsoleUI:
                 Action.Call
               )
 
-        actions += 1
+            actedPlayers =
+              actedPlayers + player.id
 
     currentState
+
+
+  private def bettingRoundFinished(
+      state: GameState,
+      actedPlayers: Set[Int]
+  ): Boolean =
+
+    val activePlayers =
+      state.activePlayers
+
+    if activePlayers.size <= 1 then
+
+      true
+
+    else
+
+      activePlayers.forall { player =>
+        player.chips == 0 ||
+        (
+          actedPlayers.contains(player.id) &&
+          state.playerBet(player.id) == state.currentBet
+        )
+      }
 
 
   private def randomAction(
@@ -360,7 +419,7 @@ object ConsoleUI:
 
       println()
       println(
-        s"${winner.name} wins the pot of ${state.pot} Chips!"
+        s"${winner.name} won the pot of ${state.pot} Chips!"
       )
 
       val updatedWinner =
@@ -404,7 +463,7 @@ object ConsoleUI:
 
       println()
       println(
-        s"${winner._1.name} wins the pot of ${state.pot} Chips!"
+        s"${winner._1.name} won the pot of ${state.pot} Chips!"
       )
 
       val updatedWinner =
