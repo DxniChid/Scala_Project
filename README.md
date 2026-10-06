@@ -93,5 +93,26 @@ The following software is required:
 
 The project uses:
 
-```text
 Scala 3.7.3
+
+### Installing sbt
+
+Download and install sbt from the official website:
+
+https://www.scala-sbt.org/download/
+
+After installation, verify that sbt is available by opening a terminal and running:
+
+sbt --version
+
+### Running the Project
+
+Clone the repository and open the project folder in a terminal:
+
+cd Scala_Project
+
+Then start the application with:
+
+sbt run
+
+The Texas Hold'em Poker Simulator will start in the console.
