@@ -1,0 +1,97 @@
+# Texas Hold'em Poker Simulator
+
+## 1. Introduction
+
+This project is an interactive Texas Hold'em Poker Simulator developed in Scala 3.
+
+The game runs completely in the console. The user plays as the only human player against 1 to 3 randomized opponents.
+
+The project was created to demonstrate functional programming concepts in Scala while building a playable and interactive application.
+
+The project focuses on immutable data, immutable collections, pure functions, recursion and pipeline functions.
+
+---
+
+## 2. Goals and Features
+
+### Goals
+
+The main goal of this project is to create a functional and interactive Texas Hold'em Poker Simulator while applying important concepts of functional programming in Scala.
+
+The project should allow the user to play poker directly in the console and experience the basic flow of a Texas Hold'em game.
+
+### Main Features
+
+The game includes:
+
+- 2 to 4 players
+- A standard 52-card deck
+- Randomly shuffled cards
+- Two hole cards for each player
+- Flop
+- Turn
+- River
+- Check
+- Call
+- Raise
+- Fold
+- All-In
+- Pot management
+- Winner detection
+- Pot payout
+- Multiple rounds
+- Randomized opponent actions
+- Poker hand evaluation
+- Automatic game-ending conditions
+
+### Supported Poker Hands
+
+The following poker hands are supported:
+
+1. High Card
+2. One Pair
+3. Two Pair
+4. Three of a Kind
+5. Straight
+6. Flush
+7. Full House
+8. Four of a Kind
+9. Straight Flush
+10. Royal Flush
+
+### User Expectations
+
+The user should be able to:
+
+- Play poker interactively
+- Choose their own actions
+- See their cards
+- See their chip balance
+- See the current pot
+- See the community cards
+- Play multiple rounds
+- See the result of each round
+- Win the pot when they have the best hand
+- Win the pot when all other players fold
+
+When the user chooses All-In, they cannot make any further decisions during that betting round.
+
+If all other players have no chips left, the game automatically ends and the user wins.
+
+---
+
+## 3. Installation
+
+### Requirements
+
+The following software is required:
+
+- Java
+- Scala 3
+- sbt
+- Visual Studio Code or another Scala-compatible IDE
+
+The project uses:
+
+```text
+Scala 3.7.3
